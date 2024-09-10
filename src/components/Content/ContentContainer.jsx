@@ -1,12 +1,12 @@
 import React from 'react'
 import ButtonList from './ButtonList'
-import VideoCart from './VideoCart'
+import VideoContainer from './VideoContainer'
 
 export default function ContentContainer() {
   return (
-    <div className="flex-1 bg-red-300">
+    <div className="flex-1">
       <ButtonList />
-      <VideoCart />
+      <VideoContainer />
     </div>
   )
 }

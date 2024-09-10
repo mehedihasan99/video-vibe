@@ -9,21 +9,21 @@ export default function Sidebar() {
   const isExpanded = useSelector((store) => store.sidebar.isExpended)
   console.log(isExpanded)
   return (
-    <aside className={`${isExpanded ? 'w-24 h-screen' : 'w-44 h-screen'}`}>
+    <aside className={`${!isExpanded ? 'w-24 h-screen' : 'w-44 h-screen'}`}>
       {/* Main Navigation */}
-      <div className="py-3 px-3">
+      <div className=" px-3">
         <ul className="space-y-2">
           <li className=" text-gray-600 rounded hover:bg-gray-200 p-2">
             <a
               className={`${
-                isExpanded
+                !isExpanded
                   ? 'flex flex-col justify-center items-center '
                   : 'flex'
               } items-center `}
               href="#"
             >
               <img className="w-8" src={homeIcon} />
-              <p className={`${isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
+              <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Home
               </p>
             </a>
@@ -31,14 +31,14 @@ export default function Sidebar() {
           <li className=" text-gray-600 rounded hover:bg-gray-200 p-2">
             <a
               className={`${
-                isExpanded
+                !isExpanded
                   ? 'flex flex-col justify-center items-center'
                   : 'flex'
               } items-center `}
               href="#"
             >
               <img className="w-8" src={exploreIcon} />
-              <p className={`${isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
+              <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Explore
               </p>
             </a>
@@ -46,14 +46,14 @@ export default function Sidebar() {
           <li className=" text-gray-600 rounded hover:bg-gray-200 p-2">
             <a
               className={`${
-                isExpanded
+                !isExpanded
                   ? 'flex flex-col justify-center items-center'
                   : 'flex'
               } items-center `}
               href="#"
             >
               <img className="w-8" src={subscribeIcon} />
-              <p className={`${isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
+              <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Subscriptions
               </p>
             </a>
@@ -62,22 +62,22 @@ export default function Sidebar() {
       </div>
 
       {/* Divider */}
-      <hr className="border-gray-400 " />
+      {isExpanded && <hr className="border-gray-300 mt-3" />}
 
       {/* Library and History */}
-      <div className="py-4 px-4">
+      <div className={` ${isExpanded && 'mt-2'} px-3 py-3`}>
         <ul className="space-y-2">
           <li className="text-gray-600 rounded hover:bg-gray-200 p-2">
             <a
               className={`${
-                isExpanded
+                !isExpanded
                   ? 'flex flex-col justify-center items-center'
                   : 'flex'
               } items-center`}
               href="#"
             >
               <img className="w-8" src={library} />
-              <p className={`${isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
+              <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Library
               </p>
             </a>
@@ -85,14 +85,14 @@ export default function Sidebar() {
           <li className="text-gray-600 rounded hover:bg-gray-200 p-2">
             <a
               className={`${
-                isExpanded
+                !isExpanded
                   ? 'flex flex-col justify-center items-center'
                   : 'flex'
               } items-center `}
               href="#"
             >
               <img className="w-8" src={musicIcon} />
-              <p className={`${isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
+              <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Music
               </p>
             </a>
@@ -101,7 +101,7 @@ export default function Sidebar() {
       </div>
 
       {/* Divider */}
-      <hr className="border-gray-700" />
+      {isExpanded && <hr className="border-gray-300 " />}
     </aside>
   )
 }
