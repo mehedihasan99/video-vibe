@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import exploreIcon from '../../assets/icon/explore.svg'
 import homeIcon from '../../assets/icon/home.svg'
 import library from '../../assets/icon/library.svg'
@@ -7,26 +8,26 @@ import subscribeIcon from '../../assets/icon/subscriptions.svg'
 import musicIcon from '../../assets/icon/youtube-music.svg'
 export default function Sidebar() {
   const isExpanded = useSelector((store) => store.sidebar.isExpended)
-  console.log(isExpanded)
+
   return (
     <aside className={`${!isExpanded ? 'w-24 h-screen' : 'w-44 h-screen'}`}>
       {/* Main Navigation */}
       <div className=" px-3">
         <ul className="space-y-2">
           <li className=" text-gray-600 rounded hover:bg-gray-200 p-2">
-            <a
+            <Link
+              to="/"
               className={`${
                 !isExpanded
                   ? 'flex flex-col justify-center items-center '
                   : 'flex'
               } items-center `}
-              href="#"
             >
               <img className="w-8" src={homeIcon} />
               <p className={`${!isExpanded ? 'ml-0 text-xs' : 'ml-3 text-sm'}`}>
                 Home
               </p>
-            </a>
+            </Link>
           </li>
           <li className=" text-gray-600 rounded hover:bg-gray-200 p-2">
             <a

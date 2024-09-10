@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import React from 'react'
 
+import { Link } from 'react-router-dom'
 import { YOUTUBE_VIDEO_API } from '../../utils/contants'
 import Loading from '../Loading'
 import VideoCart from './VideoCart'
@@ -24,9 +25,6 @@ export default function VideoContainer() {
     queryFn: retrievedVideos,
   })
 
-  // Debugging output
-  console.log(videos)
-
   // Handle loading state
   if (isLoading) return <Loading />
 
@@ -39,9 +37,11 @@ export default function VideoContainer() {
   // Render videos in a responsive grid
   return (
     <div className="container mx-auto p-4">
-      <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
         {videos.map((video) => (
-          <VideoCart key={video.id} video={video} />
+          <Link key={video.id} to={`/watch/${video.id}`}>
+            <VideoCart video={video} />
+          </Link>
         ))}
       </div>
     </div>

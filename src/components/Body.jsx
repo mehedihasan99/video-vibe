@@ -1,12 +1,12 @@
 import React from 'react'
-import ContentContainer from './Content/ContentContainer'
+import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar/Sidebar'
 
 export default function Body() {
   return (
-    <div className="flex pt-20">
+    <div className="flex pt-6">
       <Sidebar />
-      <ContentContainer />
+      <Outlet />
     </div>
   )
 }
