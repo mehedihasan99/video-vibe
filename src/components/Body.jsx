@@ -4,7 +4,7 @@ import Sidebar from './Sidebar/Sidebar'
 
 export default function Body() {
   return (
-    <div className="flex pt-6">
+    <div className="flex pt-20">
       <Sidebar />
       <Outlet />
     </div>

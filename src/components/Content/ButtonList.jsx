@@ -17,7 +17,7 @@ export default function ButtonList() {
   ]
 
   return (
-    <div className=" flex items-center w-full py-2">
+    <div className=" flex items-center w-full py-2 ">
       <div
         className="flex gap-2 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 w-full "
         aria-label="Scrollable button list"
