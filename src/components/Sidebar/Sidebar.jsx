@@ -8,9 +8,11 @@ import subscribeIcon from '../../assets/icon/subscriptions.svg'
 import musicIcon from '../../assets/icon/youtube-music.svg'
 export default function Sidebar() {
   const isExpanded = useSelector((store) => store.sidebar.isExpended)
-
-  return (
-    <aside className={`${!isExpanded ? 'w-24 h-screen' : 'w-44 h-screen'}`}>
+  const isSidebarOpen = useSelector((store) => store.sidebar.isSidebarOpen)
+  return isSidebarOpen ? (
+    ''
+  ) : (
+    <aside className={`${!isExpanded ? 'w-24 h-screen' : 'w-44 h-screen'} `}>
       {/* Main Navigation */}
       <div className=" px-3">
         <ul className="space-y-2">

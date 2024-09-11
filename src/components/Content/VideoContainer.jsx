@@ -36,8 +36,8 @@ export default function VideoContainer() {
 
   // Render videos in a responsive grid
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
+    <div className="container mx-auto p-4 ">
+      <div className="grid gap-4 grid-cols-2 justify-items-center sm:grid-cols-3 xl:grid-cols-4">
         {videos.map((video) => (
           <Link key={video.id} to={`/watch/${video.id}`}>
             <VideoCart video={video} />

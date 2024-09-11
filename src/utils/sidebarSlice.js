@@ -4,14 +4,14 @@ const sidebarSlice = createSlice({
   name: 'sidebar',
   initialState: {
     isExpended: true,
-    isSidebarOpen: true,
+    isSidebarOpen: false,
   },
   reducers: {
     toggle: (state) => {
       state.isExpended = !state.isExpended
     },
-    close: (state) => {
-      state.isSidebarOpen = false
+    close: (state, action) => {
+      state.isSidebarOpen = action.payload
     },
   },
 })
