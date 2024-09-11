@@ -13,9 +13,7 @@ export default function WatchPage() {
   return (
     <div className="px-8 mt-5 rounded-md">
       <iframe
-        className="rounded-md"
-        width="800"
-        height="400"
+        className="rounded-md w-[400px] h-[200px]  md:w-[800px] md:h-[400px]"
         src={videoUrl}
         title="YouTube video player"
         frameBorder="0"
