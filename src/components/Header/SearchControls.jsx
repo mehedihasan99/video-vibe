@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function SearchControls() {
+  const [searchText, setSearchText] = useState('')
+
+  function handleSearchChange(e) {
+    setSearchText(e.target.value)
+  }
+
   return (
     <div className="flex items-center flex-1 justify-center max-w-full md:max-w-2xl px-4 relative">
       <input
+        value={searchText}
+        onChange={handleSearchChange}
         type="text"
         className="w-full rounded-l-full border border-gray-300 dark:border-gray-600 p-2 h-10 pl-10 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition duration-200 ease-in-out"
         placeholder="Search"

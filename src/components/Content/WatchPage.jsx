@@ -7,6 +7,7 @@ export default function WatchPage() {
   let { videoId } = useParams()
   const videoUrl = `https://www.youtube.com/embed/${videoId}`
   const dispatch = useDispatch()
+
   useEffect(() => {
     dispatch(close(true))
   }, [])

@@ -3,13 +3,13 @@ import axios from 'axios'
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { YOUTUBE_VIDEO_API } from '../../utils/contants'
+import { YOUTUBE_VIDEO_API_TWO } from '../../utils/contants'
 import Loading from '../Loading'
 import VideoCart from './VideoCart'
 
 // Fetch videos from the YouTube API
 const retrievedVideos = async () => {
-  const response = await axios.get(YOUTUBE_VIDEO_API)
+  const response = await axios.get(YOUTUBE_VIDEO_API_TWO)
   return response.data.items
 }
 
